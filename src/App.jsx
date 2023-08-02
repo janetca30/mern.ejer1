@@ -12,10 +12,8 @@ function App() {
           <h2>
             My Tinerary
           </h2>
-          <ul>
-            <li>Home</li>
-            <li>Cities</li>
-          </ul>
+          <a>Home</a>
+          <a>Cities</a>
           <button type="button">
             <img src={Image} id='i01'></img>
             <p>login</p>
