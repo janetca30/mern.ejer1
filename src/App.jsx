@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 import Image from './assets/img/loginblack.png'
 import Larcomar from './assets/img/larcomar.jpg'
 import Tarjeta from './assets/img/tarjeta.png'
@@ -12,10 +12,8 @@ function App() {
           <h2>
             My Tinerary
           </h2>
-          <ul>
-            <li>Home</li>
-            <li>Cities</li>
-          </ul>
+          <a>Home</a>
+          <a>Cities</a>
           <button type="button">
             <img src={Image} id='i01'></img>
             <p>login</p>
@@ -40,7 +38,9 @@ function App() {
       </main>
       <footer>
         <img src={Tarjeta} id='i03'></img>
-        <h6>&copy Copyright by Janet Calderón Acuña de Denis - 2023</h6>
+        <h6>
+          &copy Copyright by Janet Calderón Acuña de Denis - 2023
+        </h6>
       </footer>
     </>
   )
