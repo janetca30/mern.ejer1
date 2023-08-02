@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState} from 'react'
 import Image from './assets/img/loginblack.png'
 import Larcomar from './assets/img/larcomar.jpg'
 import Tarjeta from './assets/img/tarjeta.png'
