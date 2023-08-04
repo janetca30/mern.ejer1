@@ -1,0 +1,15 @@
+footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+h6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(226, 48, 78);
+  font-weight: 800;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

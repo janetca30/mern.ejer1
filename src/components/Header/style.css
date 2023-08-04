@@ -1,0 +1,13 @@
+.header-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: pink;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2 {
+  width: 200px;
+  color: rgb(231, 25, 70);
+}
+

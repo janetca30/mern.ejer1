@@ -1,0 +1,8 @@
+nav {
+  margin-left: 150px;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  width: 300px;
+}
