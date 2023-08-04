@@ -14,5 +14,6 @@ img {
 }
 
 .more-button {
-  padding: 10px 20px;
+  width: 200px;
+  height: 40px;
 }
