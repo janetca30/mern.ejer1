@@ -13,10 +13,6 @@ function Main () {
         <div>
           {data.map((each,index)=><Card key={index} title={each.title} text={each.text}></Card>)}
         </div>
-        <div>
-          
-        </div>
-       
       </main>
     </>
     

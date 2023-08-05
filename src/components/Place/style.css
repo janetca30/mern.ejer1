@@ -1,0 +1,24 @@
+.place {
+  position: relative;
+  margin-top: 30px;
+  
+}
+
+.place-img {
+  width: 260px;
+  height: 200px;
+}
+
+.place-info {
+  position: absolute;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+}
+
+.view {
+  width: 100px;
+  margin-top: 150px;
+  margin-left: 80px;
+}

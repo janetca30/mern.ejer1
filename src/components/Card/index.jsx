@@ -1,5 +1,5 @@
 import React from 'react'
-import Larcomar from '../../assets/img/larcomar.jpg'
+import Larcomar from '../../assets/Images/larcomar.jpg'
 import './style.css'
 
 function Card ({title,text}) {
