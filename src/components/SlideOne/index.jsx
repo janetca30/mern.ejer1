@@ -6,7 +6,7 @@ import Atenas from '../../assets/Images/ImgCarousel/atenas11.jpg'
 import Antalia from '../../assets/Images/ImgCarousel/antalia11.jpg'
 import './style.css'
 
-function SlideUno() {
+function SlideOne() {
   let data = [
     {name:'Paris', location:'Francia', imagePlace:Paris},
     {name:'Malaga', location:'España', imagePlace:Malaga},
@@ -14,10 +14,10 @@ function SlideUno() {
     {name:'Antalia', location:'Turquia', imagePlace:Antalia}
   ]
   return (
-    <div className='slideUno'>
+    <div className='slide'>
       {data.map((each,key)=><Place key={key} name={each.name} location={each.location} imagePlace={each.imagePlace} />)}
     </div>
   )
 }
 
-export default SlideUno
+export default SlideOne

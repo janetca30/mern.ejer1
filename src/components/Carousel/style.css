@@ -1,0 +1,21 @@
+.controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  
+  margin-top: 30px;
+
+}
+
+.prev, .next {
+  background-color: #0cac3c;
+  color: #fff;
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
