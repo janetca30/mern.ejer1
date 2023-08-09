@@ -1,17 +1,17 @@
 import React from 'react';
 import Place from '../Place'
-import Marruecos from '../../assets/Images/ImgCarousel/essaouira33.jpg'
+import Essaouira from '../../assets/Images/ImgCarousel/essaouira33.jpg'
 import Giza from '../../assets/Images/ImgCarousel/giza33.jpg'
 import Tunez from '../../assets/Images/ImgCarousel/tunez33.jpg'
-import Venecia from '../../assets/Images/ImgCarousel/venecia33.jpg'
+import Venice from '../../assets/Images/ImgCarousel/venice33.jpg'
 import './style.css'
 
 function SlideThree() {
   let data = [
-    {name:'Essaouira', location:'Marruecos', imagePlace:Marruecos},
-    {name:'Giza', location:'Egipto', imagePlace:Giza},
+    {name:'Essaouira', location:'Morocco', imagePlace:Essaouira},
+    {name:'Giza', location:'Egypt', imagePlace:Giza},
     {name:'Tunez', location:'Tunez', imagePlace:Tunez},
-    {name:'Venecia', location:'Italia', imagePlace:Venecia}
+    {name:'Venice', location:'Italy', imagePlace:Venice}
   ]
   return (
     <div className='slide'>

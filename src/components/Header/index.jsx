@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../Nav'
 import Login from '../Login'
+import Logo from '../../assets/Images/logo.png'
 import './style.css'
 
 function Header () {
@@ -8,9 +9,7 @@ function Header () {
     <>
       <header >
         <div className='header-container'>
-          <h2 className='text-3xl font-bold'>
-            My Tinerary
-          </h2>
+          <img src={Logo} className='logotravel '/>
           <Nav />  
           <Login />
         </div>

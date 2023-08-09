@@ -1,17 +1,17 @@
 import React from 'react'
 import Place from '../Place'
-import Tokio from '../../assets/Images/ImgCarousel/tokio22.jpg'
-import Pekin from '../../assets/Images/ImgCarousel/pekin22.jpg'
-import Seul from '../../assets/Images/ImgCarousel/seul22.jpg'
+import Tokyo from '../../assets/Images/ImgCarousel/tokyo22.jpg'
+import Beijing from '../../assets/Images/ImgCarousel/beijing22.jpg'
+import Seoul from '../../assets/Images/ImgCarousel/seoul22.jpg'
 import Siam from '../../assets/Images/ImgCarousel/siam22.jpg'
 import './style.css'
 
 function SlideTwo() {
   let data = [
-    {name:'Tokio', location:'Japon', imagePlace:Tokio},
-    {name:'Pekin', location:'China', imagePlace:Pekin},
-    {name:'Seul', location:'Corea del Sur', imagePlace:Seul},
-    {name:'Siam', location:'Tailandia', imagePlace:Siam}
+    {name:'Tokyo', location:'Japan', imagePlace:Tokyo},
+    {name:'Beijing', location:'China', imagePlace:Beijing},
+    {name:'Seoul', location:'South Korea', imagePlace:Seoul},
+    {name:'Siam', location:'Thailand', imagePlace:Siam}
   ]
   return (
     <div className='slide'>

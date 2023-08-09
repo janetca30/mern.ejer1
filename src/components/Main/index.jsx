@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../Card'
+import Hero from '../Hero'
 import './style.css'
 
 function Main () {
@@ -10,7 +11,8 @@ function Main () {
   return (
     <>
       <main>
-        <div>
+        <Hero />
+        <div className='main-card'>
           {data.map((each,index)=><Card key={index} title={each.title} text={each.text}></Card>)}
         </div>
       </main>

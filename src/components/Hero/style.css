@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+.titleh2 {
+  width: 1000px;
+  height: 80px;
+  color: rgb(19, 29, 121);
+  font-family: 'Train One', cursive;
+  display: flex;
+  justify-content: center;
+}
+
+.slogan {
+  width: 1000px;
+  height: 80px;
+  color: rgb(226, 50, 203);
+  display: flex;
+  justify-content: center;
+}

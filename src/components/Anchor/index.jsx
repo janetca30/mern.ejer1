@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 
-function Anchor ({href,content}) {
+function Anchor ({to,content}) {
   return (
     <>
-      <a href={href}>{content}</a>
+      <Link className='menu-link' to={to}>
+        {content}
+      </Link>
     </>
   )
 }

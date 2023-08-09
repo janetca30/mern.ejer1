@@ -1,17 +1,18 @@
 import React from 'react'
 import Anchor from '../Anchor'
+
 import './style.css'
 
 function Nav () {
   let data = [
-    {href:'' , content:'Home'},
-    {href:'' , content :'Cities'},
+    {to:'/' , content:'Home'},
+    {to:'/cities' , content :'Cities'},
   ]
 
   return (
     <>
       <nav>
-        {data.map((each,key)=><Anchor key={key}href={each.href} content={each.content} />)}
+        {data.map((each,key)=><Anchor key={key}to={each.to} content={each.content} />)}
       </nav>
       
     </>
