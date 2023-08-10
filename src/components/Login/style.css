@@ -1,12 +1,15 @@
 .login-button {
   color: rgb(33, 187, 166);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   height: 45px;
   width: 150px;
   margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-user{
-  width: 25px;
+  width: 45px;
 }

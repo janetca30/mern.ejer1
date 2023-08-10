@@ -1,5 +1,23 @@
-.main-card{
-  display: inline-flex;
-  
+.button-container {
+  text-align: center;
 }
 
+.my-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-size: cover;
+  cursor: pointer;
+}
+@media only screen and (min-width: 320px) {
+  .my-button {
+    width: 250px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .my-button {
+    width: 250px;
+  }
+}

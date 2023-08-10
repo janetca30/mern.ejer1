@@ -5,7 +5,7 @@ import './style.css'
 function Login () {
   return (
     <>
-      <button className='login-button bg-black rounded-lg inline-flex items-center' type="button">
+      <button className='login-button bg-blue-900 rounded' type="button">
         <img className='login-user' src={user} alt="User" />
         login 
       </button> 

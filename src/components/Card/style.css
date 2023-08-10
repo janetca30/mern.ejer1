@@ -6,16 +6,21 @@
 .textp {
   color: black;
   font-weight: 500;
+  
 }
 
-img {
-  width: 400px;
-  margin: 20px;
+.card-img {
+  width: 400px;  
+  
 }
 
 .more-button {
   width: 200px;
   height: 40px;
+  
 }
-
+.card-pr {
+  margin-top: -1%;
+  
+}
 
