@@ -1,9 +1,43 @@
+
 .carousel-container {
-  max-width: 1000px; 
+  max-width: 100px; 
   margin: 0 auto;
   display: flex;
   align-items: center;
   
+}
+
+@media only screen and (min-width: 320px){
+  
+}
+
+@media only screen and (min-width: 321px) and (max-width: 767px){
+  .carousel-container {
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .carousel-container {
+    margin-left: -10px;
+    max-width: 750px;
+  }
+  
+}
+
+@media only screen and (min-width: 1024px) {
+ .carousel-container {
+    max-width: 1100px;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+  .carousel-container {
+    max-width: 1170px;
+  }
 }
 
 

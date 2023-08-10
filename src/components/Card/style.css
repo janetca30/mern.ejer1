@@ -1,26 +1,42 @@
 .title {
   color: rgb(27, 160, 160);
-  
 }
 
 .textp {
   color: black;
   font-weight: 500;
-  
 }
 
 .card-img {
-  width: 400px;  
-  
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 4rem;
 }
 
 .more-button {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: 40px;
-  
 }
+
 .card-pr {
   margin-top: -1%;
+}
+
+@media only screen and (min-width: 320px){
   
+}
+
+@media only screen and (min-width: 321px) and (max-width: 767px){
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+}
+
+@media only screen and (min-width: 1024px) {
+ 
 }
 

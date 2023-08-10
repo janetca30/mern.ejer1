@@ -1,6 +1,7 @@
 .place {
   position: relative;
   display: flex;
+  margin-left: 50px;
   
 }
 
@@ -15,7 +16,6 @@
   left: 40px;
   top: 20px;
   color: white;
-  background-color: rgba(0, 0, 0, 0);
   padding: 20px;
 }
 

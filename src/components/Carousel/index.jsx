@@ -39,11 +39,11 @@ function Carousel () {
         <button className='prev' onClick={handlePrevSlide}>
           <img className='prev1' src={Prev} />
         </button>
-      
+      <div className='container-slide'>
         {currentSlide === 1 && <SlideOne />}
         {currentSlide === 2 && <SlideTwo />}
         {currentSlide === 3 && <SlideThree />}
-                  
+      </div>            
         <button className='next' onClick={handleNextSlide}>
           <img className='next1' src={Next} />
         </button>

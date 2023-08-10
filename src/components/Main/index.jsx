@@ -24,7 +24,7 @@ function Main() {
   ];
 
   return (
-    <main>
+    <main className='main-container'>
       <Hero />
       <div className='main-card'>
         {data.map((each, index) => (
@@ -33,8 +33,8 @@ function Main() {
       </div>
       <div className='button-container'>
         <Link to='/Cities'>
-          <button className='my-button text-blue-800 flex items-center text-2xl font-bold mt-5 ml-auto mr-auto'  style={{ backgroundImage: `url(${Airplane})` }}>
-            <img className='airplane w-30'  src={Airplane} />
+          <button className='my-button text-blue-800 text-2xl font-bold '  style={{ backgroundImage: `url(${Airplane})` }}>
+            <img className='airplane '  src={Airplane} />
             View More
           </button>
         </Link>
