@@ -13,3 +13,22 @@
 .login-user{
   width: 45px;
 }
+
+@media (max-width: 767px){
+  .login-button {
+    margin-left: 60%;
+  }
+}
+
+@media ( 768px ){
+  .login-button {
+    margin-left: 1000px;
+    margin-top: -50px;
+  }
+} 
+
+@media (max-width: 991px) {
+  .login-button {
+    margin-right: 250px;
+  }
+}
