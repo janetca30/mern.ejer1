@@ -1,17 +1,11 @@
-.place {
+.tcard-container {
   position: relative;
   display: flex;
   margin-left: 50px;
   
 }
 
-.place-img {
-  width: 450px;
-  height: 350px;
-  padding: 30px;
-}
-
-.place-info {
+.tcard-info {
   position: absolute;
   left: 40px;
   top: 20px;

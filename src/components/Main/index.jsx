@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../Card'
 import Hero from '../Hero'
-import Card1 from '../../assets/Images/card1.jpg'
-import Card2 from '../../assets/Images/card2.jpg'
-import Airplane from '../../assets/Images/airplane.png'
+import Card1 from '/Images/card1.jpg'
+import Card2 from '/Images/card2.jpg'
+import Airplane from '/Images/airplane.png'
 import './style.css'
 
 function Main() {

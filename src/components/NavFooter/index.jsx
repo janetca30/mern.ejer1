@@ -1,8 +1,8 @@
 import React from 'react';
 import Networks from '../Networks'
-import Facebook from '../../assets/Images/ImgNetworks/facebook.png'
-import Whatsapp from '../../assets/Images/ImgNetworks/Whatsapp.png'
-import Contact from '../../assets/Images/ImgNetworks/contact.png'
+import Facebook from '/Images/ImgNetworks/facebook.png'
+import Whatsapp from '/Images/ImgNetworks/whatsapp.png'
+import Contact from '/Images/ImgNetworks/contact.png'
 import './style.css'
 
 function NavFooter () {
