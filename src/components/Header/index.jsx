@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../Nav'
 import Login from '../Login'
-import Logo from '../../assets/Images/logo.png'
+import Logo from '/Images/logo.png'
 import './style.css'
 
 function Header () {

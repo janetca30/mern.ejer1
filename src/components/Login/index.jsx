@@ -1,5 +1,5 @@
 import React from 'react'
-import user from '../../assets/Images/user.png'
+import user from '/Images/user.png'
 import './style.css'
 
 function Login () {

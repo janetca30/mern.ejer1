@@ -1,6 +1,6 @@
 import React from 'react'
-import Logo from '../../assets/Images/logo.png'
-import Cardp from '../../assets/Images/cardp.png'
+import Logo from '/Images/logo.png'
+import Cardp from '/Images/cardp.png'
 import './style.css'
 import NavFooter from '../NavFooter'
 

@@ -7,6 +7,13 @@
   
 }
 
+.photo {
+  width: 350px;
+  height: 250px;
+}
+
+
+
 @media only screen and (min-width: 320px){
   
 }
