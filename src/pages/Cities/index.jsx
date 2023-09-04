@@ -1,31 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import citiesActions from '../../store/actions/cities';
 
 const Cities = () => {
-  const [cities, setCities] = useState([]);
+  
   const [filter, setFilter] = useState('');
 
-  const fetchCities = async () => {
-    try {
-      const response = await axios.get(`http://localhost:4000/api/cities`);
-      setCities(response.data.message);
-    } catch (error) {
-      console.error("Error fetching cities:", error);
-    }
-  };
+  let citiesInStore = useSelector(store => store.citiesReducer.cities)
 
-  useEffect(() => {
-    fetchCities();
-  }, []);
+  const dispatch = useDispatch()
+  
+  dispatch(citiesActions.get_cities())
 
   const hFilterChange = (event) => {
     const cFilter = event.target.value.trim().toLowerCase();
     setFilter(cFilter);
   };
 
-  const filteredCities = cities.filter((city) =>
+  citiesInStore = citiesInStore.filter((city) =>
     city.name.toLowerCase().startsWith(filter)
   );
 
@@ -49,10 +43,10 @@ const Cities = () => {
       <div className="tcard-container">
         <h2 className="text-4xl font-bold text-blue-950 text-center">Cities</h2>
         <div className="card-deck d-flex flex-wrap justify-content-center gap-5">
-          {filteredCities.length === 0 ? (
+          {citiesInStore.length === 0 ? (
             <p className='text-4xl text-cyan-300 p-5'>No cities found</p>
           ) : (
-            filteredCities.map((city) => (
+            citiesInStore.map((city) => (
               <div className="" key={city._id}>
                 <img
                   src={city.photo}

@@ -1,0 +1,28 @@
+.itiPhoto {
+  border: 30px solid whitesmoke
+}
+
+h4 {
+  color:rgb(214, 30, 61);
+}
+
+/* Estilos para el botón */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para el contenedor que se despliega */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
