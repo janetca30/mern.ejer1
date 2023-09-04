@@ -37,7 +37,7 @@ const filter_itineraries_by_id = createAsyncThunk('filter_itineraries_by_id', as
 const get_itineraries_by_city = createAsyncThunk('get_itineraries_by_city', async (city)=>{
   try{
     const itineraries = await axios.get(`http://localhost:4000/api/itineraries?city=${city}`)
-      .then((response) => response.data.menssage);
+      .then((response) => response.data.message);
 
       return {
         itineraries : itineraries 

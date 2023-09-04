@@ -3,7 +3,7 @@ import itinerariesActions from "../../store/actions/itineraries";
 import './style.css'; 
 import { useEffect, useState } from 'react';
 
-/*const ItineraryCard = ({ cityId }) => {
+const ItineraryCard = ({ cityId }) => {
   
   const dispatch = useDispatch();
   
@@ -22,38 +22,12 @@ import { useEffect, useState } from 'react';
     // Manejar el caso en el que itinerariesInStore no sea un array
     return <p>Itineraries not available.</p>;
   }
-  
+  console.log('itinerariesInStore:' , itinerariesInStore)
   const filteredItineraries = itinerariesInStore.filter((itinerary) => itinerary.city === cityId);
   
   if (!filteredItineraries || filteredItineraries.length === 0) {
     return <p>There are no itineraries available for this city.</p>;
-  }*/
-
-  const ItineraryCard = () => {
-  const dispatch = useDispatch();
-  
-  const itinerariesInStore = useSelector((store) => store.itinerariesReducer.itineraries);
-  const [open, setOpen] = useState({});
-
-  useEffect(() => {
-    
-    // Simplemente carga todos los itinerarios.
-    dispatch(itinerariesActions.get_itineraries());
-  }, [dispatch]);
-
-  const handleViewMoreClick = (id) => {
-    setOpen({ ...open, [id]: !open[id] });
-  };
-
-  if (!Array.isArray(itinerariesInStore)) {
-   
-    return <p>Itineraries not available.</p>;
   }
-  
-  if (itinerariesInStore.length === 0) {
-    return <p>There are no itineraries available.</p>;
-  }
-
 
   return (
     <>
@@ -61,8 +35,7 @@ import { useEffect, useState } from 'react';
         <h3 className='text-4xl text-center font-bold mt-5 text-pink-600'>Itineraries</h3>
       </div>
       <div className="cardItinerary bg-blue-950 mt-5 p-5 text-white">
-        {//filteredItineraries.map((itinerary) => (
-          itinerariesInStore.map((itinerary) => (
+        {filteredItineraries.map((itinerary) => (
           <div className='itinerary-container' key={itinerary._id}>
             <div >
               <div className='itinerary-title '>
