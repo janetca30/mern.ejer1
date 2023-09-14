@@ -31,8 +31,9 @@
   .slides-container {
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
+    width: 70vh;
   }
+ 
 }
 
 @media only screen and (min-width: 321px) and (max-width: 687px){
@@ -46,6 +47,8 @@
   .slides-container {
     display: flex;
     flex-wrap: wrap;
+    width: 70vh;
+  
   }
 }
 
@@ -60,6 +63,8 @@
   .slides-container {
     display: flex;
     flex-wrap: wrap;
+    width: 38vh;
+  
   }
 
   .photo {
@@ -90,24 +95,31 @@
 @media only screen and (min-width: 1024px) {
   .carousel-container {
     width: 100%;
-    display: flex;
+    
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    
+    
   }
 
   .slides-container {
-    display: flex;
-    flex-wrap: nowrap;
+    width: 800px;
   }
 
   .photo {
     width: 400px;
     height: 220px;
   }
+
+  .next {
+    position: absolute;
+    margin-left: 960px;
+  }
+
+  .prev {
+  position: absolute;
+  margin-right: 960px;
 }
-
-
+}
 @media only screen and (min-width: 1200px) {
   .carousel-container {
     width: 1200px;
@@ -122,7 +134,19 @@
     flex-wrap: nowrap;
   }
 
-  
+  .slides-container {
+    width: 960px;
+  }
+
+  .next {
+    position: absolute;
+    margin-left: 1060px;
+  }
+
+  .prev {
+  position: absolute;
+  margin-right: 1060px;
+}
 }
 
 

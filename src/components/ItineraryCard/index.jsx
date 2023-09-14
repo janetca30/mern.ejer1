@@ -32,25 +32,25 @@ const ItineraryCard = ({ cityId }) => {
   return (
     <>
       <div className="container">
-        <h3 className='text-4xl text-center font-bold mt-5 text-pink-600'>Itineraries</h3>
+        <h3 className='itin text-4xl text-center font-bold mt-5 text-pink-600'>Itineraries</h3>
       </div>
       <div className="cardItinerary bg-blue-950 mt-5 p-5 text-white">
         {filteredItineraries.map((itinerary) => (
           <div className='itinerary-container' key={itinerary._id}>
             <div >
               <div className='itinerary-title '>
-                <h3 className="text-pink-600 text-3xl font-semibold flex justify-center">{itinerary.name}</h3>
+                <h3 className="nameIti text-pink-600 text-3xl font-semibold flex justify-center">{itinerary.name}</h3>
               </div>
-              <div className="container inline-flex mt-5 " >
+              <div className="container2 inline-flex mt-5 " >
                 <div className="itin-photo">
                   <img src={itinerary.photo} className="itiPhoto w-96 h-64 "  />
                 </div>
                 <div className="itin-info-1 ml-24">
-                  <div className='text-lg'>
+                  <div className='It1 text-lg'>
                     <h4>Author:</h4>
                     <p>{itinerary.author}</p>
                   </div>
-                  <div className="">
+                  <div className="It2">
                     <h4>Likes:</h4>
                     <p>{itinerary.likes}</p>
                     <div className="likes-container inline-flex">
@@ -63,7 +63,7 @@ const ItineraryCard = ({ cityId }) => {
                       ))}
                     </div>
                   </div>
-                  <div className="">
+                  <div className="It3">
                     <h4>Price:</h4>
                     <p>{itinerary.price}</p>
                     <div className="likes-container inline-flex">

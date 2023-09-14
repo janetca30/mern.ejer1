@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import citiesActions from '../../store/actions/cities';
 import ItineraryCard from '../ItineraryCard';
+import './style.css'
 
 const Detail = () => {
   
@@ -23,13 +24,13 @@ const Detail = () => {
   return (
     <>
       <div className="city-detail inline-flex mt-5">
-        <img src={city.photo} alt={city.name} className="w-7/12 h-96" />
+        <img src={city.photo} alt={city.name} className="image w-7/12 h-96" />
         <div className="ml-10">
-          <div className="flex justify-around">
+          <div className=" text1 flex justify-around">
             <h2 className="text-3xl font-bold Font text-cyan-300">{city.name}</h2>
             <h2 className="text-3xl font-bold text-center text-blue-700">{city.country}</h2>
           </div>
-          <p className="mt-3 ">{city.description}</p>
+          <p className="desc mt-3 ">{city.description}</p>
           <Link to="/Cities" className="btn bg-cyan-300 mt-4">
             Back to Cities
           </Link>

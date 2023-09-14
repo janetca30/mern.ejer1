@@ -31,7 +31,7 @@ h6 {
   justify-content: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
   .footer {
     flex-direction: row;
     justify-content: space-between;
@@ -41,16 +41,48 @@ h6 {
   .logotravel2 {
     height: 80px;
     margin-bottom: 0;
+    
   }
 
   .cardp {
     height: 30px;
+  }
+
+  .travel-net {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 50%;
+  }
+
+  .copyright {
+    margin-top: 5%;
+    margin-right: 40%;
   }
 }
 @media only screen and (min-width: 320px) {
   .footer {
     padding: 10px;
     margin-top: 10px;
+  }
+
+  .travel-net {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 50%;
+  }
+  .copyright {
+    margin-top: 5%;
+    margin-right: 40%;
   }
 
   h6 {
@@ -85,4 +117,39 @@ h6 {
   .cardp {
     height: 25px;
   }
+
+  .travel-net {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .copyright {
+    margin-top: 5%;
+    margin-right: 40%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .copyright {
+    margin-top: -6%;
+    margin-right: -55%;
+  }
+
+  .travel-net {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.logotravel2 {
+  height: 60px;
+  margin-bottom: 15px;
+  margin-left: 16%;
+}
 }

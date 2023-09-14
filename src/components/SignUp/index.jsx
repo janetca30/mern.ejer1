@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
+import countries from '../../../countries.json'
 import userActions from '../../store/actions/user';
 import './style.css';
 
@@ -45,8 +46,6 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Aquí debes agregar la lógica real para enviar los datos de registro al servidor.
-    // Por ahora, simplemente estableceremos isRegistered en true.
     setIsRegistered(true);
   };
     const signUpWithGoogle = (credentialResponse) => {
@@ -66,7 +65,7 @@ function SignUp() {
   return (
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
-        <h2>Create account</h2>
+        <h2 className='text-3xl text-cyan-600 font-semibold'>Create account</h2>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
@@ -119,16 +118,23 @@ function SignUp() {
         </div>
         <div className="form-group">
           <label htmlFor="country">Country:</label>
-          <input
+          <select className='text-cyan-700 rounded-md   bg-pink-200'
             type="text"
             id="country"
             value={country}
             onChange={handleCountryChange}
-            required
-          />
+          >
+            <option  value="">Select Country</option>
+
+            {countries.map((index) => (
+              <option key={index.id} value={index.name}>
+                {index.name}{" "}
+              </option>
+            ))}
+          </select>
         </div>
-        <button type="submit">Sign Up</button>
-        <p>
+        <button className="signup text-white py-2 px-8 rounded bg-cyan-700" type="submit">Sign Up</button>
+        <p className='text-cyan-700'>
           Already have an account?{' '}
           <Link to="/">Home</Link>
         </p>
@@ -139,7 +145,7 @@ function SignUp() {
           console.log('Login Failed');
         }}/>
       </form>
-      {isRegistered && <p>Registration successful! You can now log in.</p>}
+      
     </div>
   );
 }

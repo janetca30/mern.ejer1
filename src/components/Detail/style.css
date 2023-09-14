@@ -1,0 +1,128 @@
+@media only screen and (min-width: 320px){
+  .city-detail {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image {
+    margin-left: -45%;
+  }
+
+  .text1 {
+    margin-left: -20%;
+    margin-right: 40%;
+  }
+
+  .desc {
+    width: 50%;
+  }
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 687px){
+  .city-detail {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    margin-left: -40%;
+    margin-right: 5%;
+  }
+
+  .text1 {
+    margin-left: -20%;
+    margin-right: 40%;
+  }
+
+  .desc {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 688px) and (max-width: 767px){
+  .city-detail {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    margin-left: -2%;
+    margin-right: 5%;
+  }
+
+  .text1 {
+    margin-left: 10%;
+    margin-right: 20%;
+  }
+
+  .desc {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .city-detail {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    margin-left: -2%;
+    margin-right: 5%;
+  }
+
+  .text1 {
+    margin-left: 10%;
+    margin-right: 20%;
+  }
+
+  .desc {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .city-detail {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .image {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  .text1 {
+    margin-left: 10%;
+    margin-right: 20%;
+  }
+
+  .desc {
+    width: 100%;
+  }
+}

@@ -68,7 +68,7 @@ function SignIn() {
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
-              className="inpEmail border-none outline-none"
+              className="inpEmail1 border-none outline-none"
               name="email"
               autoComplete="off"
               type="email"
@@ -80,7 +80,7 @@ function SignIn() {
           <div className="form-group">
             <label htmlFor="password">Password:</label>
             <input
-              className="inpPass border-none outline-none"
+              className="inpPass1 border-none outline-none"
               name="password"
               autoComplete="off"
               type="password"

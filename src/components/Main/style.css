@@ -41,13 +41,19 @@
 
 @media only screen and (min-width: 320px){
   .card-pr {
-    width: 60%;
+    width: 100%;
     flex-wrap: wrap;
+    
+  }
+
+  .main-card {
+    width: 100%;
   }
 
   .container-card {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   .title {
@@ -59,16 +65,24 @@
   .textp {
     width: 100%;
     margin-right: 0px;
-    margin-left: -10px;
+    margin-left: 0px;
   }
 
   .card-img {
-    width: 310px;
+    width: 100%;
     height: 250px;
   }
 
   .button {
     width: 55%;
+  }
+
+  .my-button {
+    margin-left: 10%;
+  }
+
+  .main-container{
+    width: 60%;
   }
 }
 
@@ -81,14 +95,18 @@
   .container-card {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   .title {
     width: 100%;
     display:flex;
-    
   }
   
+  .main-card {
+    width: 160%;
+  }
+
   .textp {
     width: 100%;
     
@@ -102,11 +120,15 @@
   .button {
     width: 60%;
   }
+
+  .my-button {
+    margin-left: 15%;
+  }
 }
 
 @media only screen and (min-width: 688px) and (max-width: 767px){
   .card-pr {
-    width: 100%;
+    width: 170%;
     flex-wrap: nowrap;
   }
   
@@ -124,11 +146,21 @@
   .button {
     width: 100%;
   }
+
+  .main-card {
+    width: 100%;
+  }
+
+  .container-card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .card-pr {
-    width: 100%;
+    width: 180%;
     flex-wrap: nowrap;
   }
 
@@ -140,11 +172,21 @@
   .button {
     width: 100%;
   }
+
+  .main-card {
+    width: 100%;
+  }
+
+  .container-card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .card-pr {
-    width: 100%;
+    width: 165%;
     flex-wrap: nowrap;
   }
 
@@ -164,6 +206,10 @@
   }
 
   .button {
+    width: 100%;
+  }
+
+  .main-card {
     width: 100%;
   }
 }

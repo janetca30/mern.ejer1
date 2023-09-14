@@ -41,7 +41,7 @@ const Cities = () => {
         </div>
       </nav>
       <div className="tcard-container">
-        <h2 className="text-4xl font-bold text-blue-950 text-center">Cities</h2>
+        <h2 className=" cities text-4xl font-bold text-blue-950 text-center">Cities</h2>
         <div className="card-deck d-flex flex-wrap justify-content-center gap-5">
           {filteredCities.length === 0 ? (
             <p className='text-4xl text-cyan-300 p-5'>No cities found</p>
