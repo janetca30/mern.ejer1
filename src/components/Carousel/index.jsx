@@ -43,11 +43,11 @@ const Carousel = () => {
       <button onClick={() => setFirstSlide((slideIndex) => slideIndex === 0 ? 8 : slideIndex - 4)}>
           <img src={Prev} alt="Previous" />
       </button>
-      <div className="slides-container mt-5 gap-4 flex ">
+      <div className="slides-container mt-5 rounded-xl flex bg-blue-950">
         {slidesData.map((slide) => (
-          <div key={slide.id} className="slide">
-            <img className="photo" src ={slide.photo} alt={slide.name} />
-            <div className="slide-details">
+          <div key={slide.id} className="slide ">
+            <img className="photo p-3 " src ={slide.photo} alt={slide.name} />
+            <div className="slide-details font-semibold text-white">
               <h2>{slide.name}</h2>
               <p>{slide.country}</p>
             </div>

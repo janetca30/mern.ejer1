@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,19 +7,19 @@ import citiesActions from '../../store/actions/cities';
 const Cities = () => {
   
   const [filter, setFilter] = useState('');
+  const citiesInStore = useSelector((store) => store.citiesReducer.cities)
+  const dispatch = useDispatch();
 
-  let citiesInStore = useSelector(store => store.citiesReducer.cities)
-
-  const dispatch = useDispatch()
-  
-  dispatch(citiesActions.get_cities())
+  useEffect(() =>  {
+    dispatch(citiesActions.get_cities())
+  }, [dispatch]);
 
   const hFilterChange = (event) => {
     const cFilter = event.target.value.trim().toLowerCase();
     setFilter(cFilter);
   };
 
-  citiesInStore = citiesInStore.filter((city) =>
+  const filteredCities = citiesInStore.filter((city) =>
     city.name.toLowerCase().startsWith(filter)
   );
 
@@ -43,10 +43,10 @@ const Cities = () => {
       <div className="tcard-container">
         <h2 className="text-4xl font-bold text-blue-950 text-center">Cities</h2>
         <div className="card-deck d-flex flex-wrap justify-content-center gap-5">
-          {citiesInStore.length === 0 ? (
+          {filteredCities.length === 0 ? (
             <p className='text-4xl text-cyan-300 p-5'>No cities found</p>
           ) : (
-            citiesInStore.map((city) => (
+            filteredCities.map((city) => (
               <div className="" key={city._id}>
                 <img
                   src={city.photo}

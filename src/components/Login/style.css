@@ -20,7 +20,7 @@
   }
 }
 
-@media ( 768px ){
+@media (width: 768px ){
   .login-button {
     margin-left: 1000px;
     margin-top: -50px;
@@ -32,3 +32,5 @@
     margin-right: 250px;
   }
 }
+
+

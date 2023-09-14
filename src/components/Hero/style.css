@@ -12,33 +12,52 @@
 }
 
 .slogan {
-  width: 100%;
+  width: 60%;
   height: 60px;
   color: rgb(226, 50, 203);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
-}
+  }
 
 @media only screen and (min-width: 320px){
   .titleh2 {
-    margin-left: -140px;
+    width: 55%;
   }
   .slogan {
     flex-direction: column;
+    margin-bottom: 10px;
   }
 }
 
 
-@media only screen and (min-width: 321px) and (max-width: 767px){
-  
+@media only screen and (min-width: 321px) and (max-width: 687px){
+  .titleh2 {
+    width: 58%;
+  }
+}
+
+
+@media only screen and (min-width: 688px) and (max-width: 767px){
+  .titleh2 {
+    width: 100%;
+    margin-left: 2%;
+    
+  }
+
+  .slogan {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  
+  .slogan {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
- 
+  .slogan {
+  width: 100%;
+  }
 }

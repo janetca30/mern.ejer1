@@ -1,17 +1,23 @@
-import React from 'react'
-import user from '/Images/user.png'
-import './style.css'
+import React from 'react';
+import user from '/Images/user.png'; 
+import { Link } from 'react-router-dom';
+import SignIn from '../../components/SignIn';
+import './style.css';
 
-function Login () {
+function Login() {
   return (
     <>
-      <button className='login-button bg-blue-900 rounded' type="button">
-        <img className='login-user' src={user} alt="User" />
-        login 
-      </button> 
+      <Link to="/SignIn">
+        <button className="login-button bg-blue-900 rounded" type="button">
+          <img className="login-user" src={user} alt="User" />
+          Log In
+        </button>
+      </Link>
     </>
-    
   );
 }
 
 export default Login;
+
+
+
