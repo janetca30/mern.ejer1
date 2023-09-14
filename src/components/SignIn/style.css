@@ -1,0 +1,13 @@
+.signin-container {
+  background-color: darkcyan;
+  width: 500px;
+  height: 300px;
+  flex-direction: column;
+  justify-items: center;
+  
+}
+
+.inpPass, .inpEmail {
+  background-color: darkcyan;
+  padding-bottom: 10px;
+  }

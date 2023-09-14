@@ -1,31 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import citiesActions from '../../store/actions/cities';
 
 const Cities = () => {
-  const [cities, setCities] = useState([]);
+  
   const [filter, setFilter] = useState('');
+  const citiesInStore = useSelector((store) => store.citiesReducer.cities)
+  const dispatch = useDispatch();
 
-  const fetchCities = async () => {
-    try {
-      const response = await axios.get(`http://localhost:4000/api/cities`);
-      setCities(response.data.message);
-    } catch (error) {
-      console.error("Error fetching cities:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchCities();
-  }, []);
+  useEffect(() =>  {
+    dispatch(citiesActions.get_cities())
+  }, [dispatch]);
 
   const hFilterChange = (event) => {
     const cFilter = event.target.value.trim().toLowerCase();
     setFilter(cFilter);
   };
 
-  const filteredCities = cities.filter((city) =>
+  const filteredCities = citiesInStore.filter((city) =>
     city.name.toLowerCase().startsWith(filter)
   );
 
