@@ -1,156 +1,140 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import countries from '../../../countries.json'
+import countries from '../../../countries.json';
 import userActions from '../../store/actions/user';
 import './style.css';
-
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
 
 function SignUp() {
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [password, setPassword] = useState('');
-  const [country, setCountry] = useState('');
-  const [isRegistered, setIsRegistered] = useState(false);
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleImageUrlChange = (e) => {
-    setImageUrl(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleCountryChange = (e) => {
-    setCountry(e.target.value);
-  };
- 
   const dispatch = useDispatch();
+
+  const nameInputRef = useRef();
+  const lastNameInputRef = useRef();
+  const emailInputRef = useRef();
+  const imageUrlInputRef = useRef();
+  const passwordInputRef = useRef();
+  const countrySelectRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    setIsRegistered(true);
+
+    const name = nameInputRef.current.value;
+    const lastName = lastNameInputRef.current.value;
+    const imageUrl = imageUrlInputRef.current.value;
+    const email = emailInputRef.current.value;
+    const password = passwordInputRef.current.value;
+    const country = countrySelectRef.current.value;
+
+    try {
+      dispatch(userActions.signUp({ name, lastName, email, password, imageUrl, country }));
+    } catch (error) {
+      console.error(error);
+    }
   };
-    const signUpWithGoogle = (credentialResponse) => {
-      const dataUser = jwtDecode( credentialResponse.credential);
 
-      const body ={
-        name: dataUser.name,
-        email: dataUser.email,
-        imageUrl: dataUser.picture,
-        password: dataUser.given_name + dataUser.sub,
-      }
-      dispatch(userActions.signUp(body));
-    };
+  const signUpWithGoogle = (credentialResponse) => {
+    const dataUser = jwtDecode(credentialResponse.credential);
+    const name = dataUser.given_name
+    const lastName = dataUser.family_name
+    const email = dataUser.email
+    const password = dataUser.sub
+    const imageUrl = dataUser.picture
+    const country = 'Other'
 
-  
+    try {
+      dispatch(userActions.signUp({ name, lastName, email, password, imageUrl, country }));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
-    <div className="signup-container">
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <h2 className='text-3xl text-cyan-600 font-semibold'>Create account</h2>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={handleNameChange}
-            required
+    <>
+      <div className="signup-container">
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <h2 className='text-3xl text-cyan-600 font-semibold'>Create account</h2>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+              ref={nameInputRef}
+              type="text"
+              id="name"
+              name="name"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="lastName">Last Name:</label>
+            <input
+              ref={lastNameInputRef}
+              type="text"
+              id="lastName"
+              name="lastName"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              ref={emailInputRef}
+              type="email"
+              id="email"
+              name="email"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="imageUrl">Image URL:</label>
+            <input
+              ref={imageUrlInputRef}
+              type="text"
+              id="imageUrl"
+              name="imageUrl"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              ref={passwordInputRef}
+              type="password"
+              id="password"
+              name="password"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="country">Country:</label>
+            <select
+              className='text-cyan-700 rounded-md bg-pink-200'
+              ref={countrySelectRef}
+              id="country"
+              name="country"
+            >
+              <option value="">Select Country</option>
+              {countries.map((country) => (
+                <option key={country.id} value={country.name}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button className="signup text-white py-2 px-8 rounded bg-cyan-700" type="submit">Sign Up</button>
+          <p className='text-cyan-700'>
+            Already have an account?{' '}
+            <Link to="/SignIn">Sign In</Link>
+          </p>
+          <GoogleLogin
+            onSuccess={signUpWithGoogle}
+            onError={() => {
+              console.log('Login Failed');
+            }}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            value={lastName}
-            onChange={handleLastNameChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="imageUrl">Image URL:</label>
-          <input
-            type="text"
-            id="imageUrl"
-            value={imageUrl}
-            onChange={handleImageUrlChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="country">Country:</label>
-          <select className='text-cyan-700 rounded-md   bg-pink-200'
-            type="text"
-            id="country"
-            value={country}
-            onChange={handleCountryChange}
-          >
-            <option  value="">Select Country</option>
-
-            {countries.map((index) => (
-              <option key={index.id} value={index.name}>
-                {index.name}{" "}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button className="signup text-white py-2 px-8 rounded bg-cyan-700" type="submit">Sign Up</button>
-        <p className='text-cyan-700'>
-          Already have an account?{' '}
-          <Link to="/">Home</Link>
-        </p>
-        <GoogleLogin
-        text="signup_with"  
-        onSuccess={signUpWithGoogle}
-        onError={() => {
-          console.log('Login Failed');
-        }}/>
-      </form>
-      
-    </div>
+        </form>
+      </div>
+    </>
   );
 }
 
 export default SignUp;
+
 
 
 

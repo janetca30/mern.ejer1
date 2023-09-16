@@ -27,7 +27,7 @@ const signIn = createAsyncThunk('signIn', async (payload) => {
 
 const signUp = createAsyncThunk('signUp', async (payload) => {
   try{
-        
+       
     const response = await axios
     .post('http://localhost:4000/api/user/signUp', payload);
       
@@ -69,9 +69,10 @@ const authenticate = createAsyncThunk("authenticate", async()=>{
 
 const signOut = createAsyncThunk("signOut", async ()=>{
   try {
-      await axios.post('http://localhost:4000/api/user/signOut');
-        localStorage.removeItem("token");
-        console.log('Successfully signed out');
+      await axios
+      .post('http://localhost:4000/api/user/signOut')
+      .then(localStorage.removeItem("token"))
+      .then(console.log('Successfully signed out'))
         
   } catch (error) {
     console.log(error.message);
