@@ -4,13 +4,14 @@ import axios from 'axios';
 
 const signIn = createAsyncThunk('signIn', async (payload) => {
   try{
-      let {email, password} = payload;
-    
+    let {email, password} = payload;
+
     const response = await axios
     .post('http://localhost:4000/api/user/signIn', {
       email: email,
       password : password,
     });
+
     if (response.data.user) {
       localStorage.setItem('token', response.data.token);
       console.log('Successfully logged in');
@@ -18,12 +19,12 @@ const signIn = createAsyncThunk('signIn', async (payload) => {
         user: response.data.user,
       };
     } else {
-      throw new Error("User not found"); 
+      throw new Error("User not found");
     }
   } catch(error) {
-      error.response.data.message.forEach((message) => console.log(message))
-    }
-  });
+    error.response.data.message.forEach((message) => console.log(message))
+  }
+});
 
 const signUp = createAsyncThunk('signUp', async (payload) => {
   try{
@@ -33,11 +34,11 @@ const signUp = createAsyncThunk('signUp', async (payload) => {
       
       localStorage.setItem('token', response.data.token);
       console.log('Successfully registered');
-      return response.data.user
+        return response.data.user
     }
     catch(error) {
-      error.response.data.message.forEach((message) => console.log(message))
-    }      
+        error.response.data.message.forEach((message) => console.log(message))
+    }
     
 });
 
@@ -45,7 +46,7 @@ const authenticate = createAsyncThunk("authenticate", async()=>{
 
   try {
     let token = localStorage.getItem("token");
-      
+    
     let user = await axios.post ('http://localhost:4000/api/user/authenticated', null, {
   
       headers:{
@@ -58,28 +59,27 @@ const authenticate = createAsyncThunk("authenticate", async()=>{
       localStorage.setItem("token", response.data.token);
       return response.data.user;
     })
-    return {
+      return {
       user : user
     }
   } catch (error) {
     console.log(error.message);
-    
+
   }
 });
 
-const signOut = createAsyncThunk("signOut", async ()=>{
+
+const signOut = createAsyncThunk("signOut", async () => {
   try {
-      await axios
-      .post('http://localhost:4000/api/user/signOut')
-      .then(localStorage.removeItem("token"))
-      .then(console.log('Successfully signed out'))
-        
+    await axios
+      .post('http://localhost:4000/api/user/signOut');
+      localStorage.removeItem("token");
+      console.log('Successfully signed out');
   } catch (error) {
     console.log(error.message);
-    throw error;
   }
 });
 
-const userActions = { signIn, authenticate, signOut, signUp }
+const userActions = { signIn, authenticate, signOut, signUp };
 
-export default userActions
+export default userActions;

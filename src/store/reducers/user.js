@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import userActions from "../actions/user";
 
 const initialState = {
-  token: false,
+  login: false,
   user:
     {
       email: "",
@@ -22,15 +22,15 @@ const userReducer = createReducer(initialState, (builder) =>{
   .addCase(userActions.signIn.fulfilled, (state, action)=>{
     if (action.payload)
       return {user: action.payload.user,
-              token: action.payload.token}
-      else return {...state, token: false}
+              login: true}
+      else return {...state, login: false}
   })
   
   .addCase(userActions.authenticate.fulfilled, (state, action)=>{
     if (action.payload) 
       return {user: action.payload.user,
-          token:action.payload.token}
-      else return {...state, token: false}
+          login:true}
+      else return {...state, login: false}
   })
   .addCase(userActions.signOut.fulfilled, ()=> {
     return initialState

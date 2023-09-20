@@ -1,0 +1,31 @@
+.logout {
+  color: rgb(33, 187, 166);
+  font-size: 20px;
+  font-weight: bold;
+  height: 45px;
+  width: 180px;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 767px){
+  .logout {
+    margin-left: 30%;
+  }
+}
+
+@media (width: 768px ){
+  .logout {
+    margin-left: 1000px;
+    margin-top: -50px;
+  }
+} 
+
+@media (max-width: 991px) {
+  .logout {
+    margin-right: 250px;
+  }
+}

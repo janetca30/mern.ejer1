@@ -7,7 +7,7 @@ import './style.css';
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from 'jwt-decode';
 
-function SignUp() {
+const SignUp = () => {
   const dispatch = useDispatch();
 
   const nameInputRef = useRef();
